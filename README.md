@@ -2,12 +2,12 @@
 
 Progetto sistemi operativi 2019/2020 del corso di laurea in informatica Università degli studi di Firenze
 
-L'obiettivo del progetto è quello di costruire una simulazione della comincazione (in parte) di un sistema Fly-By-Wire.
+L'obiettivo del progetto è quello di costruire una simulazione della comunicazione (in parte) di un sistema Fly-By-Wire.
 
 Il fly by wire è un sistema che sostituisce i tradizionali comandi di volo diretti con un sistema di comando elettronico digitale.
 
 Per poter acquisire dati verrà usato il sistema di comunicazione dati nmea utilizzato soprattutto in nautica e nella comunicazione di dati gps. Il progetto si basa su dati raccolti da un GARMIN G18 in ambiente aperto.
-Nel nostro caso analizzaeremo sotanto queta riga che inizia con il target $GPGLL.
+Nel nostro caso analizzeremo solamente la riga che inizia con il target $GPGLL.
 
 $GPGLL = Geographic position, latitude / longitude
 
@@ -18,7 +18,7 @@ I componenti che utilizzeremo saranno 5:
 * WES
 * PFC Disconnect Switch
 
-In totale saranno 7 processi, di cui alcuni per poter portare a termine le operazioni ne generno altri figli.
+In totale saranno 7 processi, di cui alcuni per poter portare a termine le operazioni ne generano altri figli.
 
 
 ###  PFC
@@ -34,13 +34,13 @@ Comunica la velocità elaborata a Transducers, tramite le seguenti modalità:
 *PFC3 comunica tramite scrittura su un file condiviso
 
 ###  Transducers
-Il processo deve acquisire ad ogni istante la velocità inviata da PFC1, PFC2 e PFC3
+Il processo deve acquisire a ogni istante la velocità inviata da PFC1, PFC2 e PFC3
 Genera un log per ogni PFC: speedPFC1.log, speedPFC2.log e speedPFC3.
 Nel caso di fallimenti i dati non saranno inviati e il transducer non potrà analizzarli.
 
 
 ###  Generatore Fallimenti
-Ad ogni istante di tempo seleziona in modo casuale uno dei PFC
+A ogni istante di tempo seleziona in modo casuale uno dei PFC
 Viene inviato al processo scelto con probabilità:
 * 0.01 invia un segnale SIGSTOP
 * 0.0001 invia un segnale SIGINT
@@ -57,6 +57,7 @@ Possono verificarsi 3 eventi:
 * Se tutti i log sono concordi allora segnala la correttezza con un OK.
 * Se 2 sono concordi e 1 discorde viene inviato un messaggio di ERRORE, indicando il processo discorde.
 * Se tutti e 3 sono discordi invia un messaggio di EMERGENZA.
+
 Tutti i messaggi del WES sono stampati nello standard output e inseriti in un file di log chiamato status.log.
 
 ###  PFCDisconnectedSwitch
@@ -66,9 +67,10 @@ In caso di ERRORE controlla lo stato del processo, una volta scoperto lo stato d
 *Aggiustato.
 *Sbloccato.
 *Riavviato.
-                                   In caso ci fosse bisogno di tare uno di queste operazioni su un processo, esso ripartire a leggere nel punto giusto del file G18.txt, per fare questo è necessario mantenere in un file separato il numero di riga letta dai file temporaneo "nextLine.txt". Infine Loggare l'attività svolta nel log chiamato switch.log.
 
-In caso di EMERGENZA ermina l'applicazione e dopo qualche secondo Riavviare l'applicazione ripartendo a leggere dal punto in cui si e' fermato(tramito nextLine).
+In caso ci fosse bisogno di tare uno di queste operazioni su un processo, esso ripartire a leggere nel punto giusto del file G18.txt, per fare questo è necessario mantenere in un file separato il numero di riga letta dai file temporaneo "nextLine.txt". Infine Loggare l'attività svolta nel log chiamato switch.log.
+
+In caso di EMERGENZA termina l'applicazione e dopo qualche secondo riavvia l'applicazione ripartendo a leggere dal punto in cui si è fermato(tramito nextLine).
 										 
 
 ##  ESECUZIONE 
