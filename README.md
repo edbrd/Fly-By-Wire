@@ -50,14 +50,14 @@ Viene inviato al processo scelto con probabilità:
 Logga l'azione su un file failures.log
 Si possono verificare anche più di uno degli eventi definiti sopra durante lo stesso istante di tempo. Considerando che i PFC devono saper ricevere i segnali sopra descritti.
 
-### H3 WES
+### WES
 Processo controllore dei PFC notificando eventuali problemi ad ogni istante, accedendo ai log generati.
 
 Possono verificarsi 3 eventi:
 * Se tutti i log sono concordi allora segnala la correttezza con un OK.
 * Se 2 sono concordi e 1 discorde viene inviato un messaggio di ERRORE, indicando il processo discorde.
 * Se tutti e 3 sono discordi invia un messaggio di EMERGENZA.
-                               Tutti i messaggi del WES sono stampati nello standard output e inseriti in un file di log chiamato status.log.
+Tutti i messaggi del WES sono stampati nello standard output e inseriti in un file di log chiamato status.log.
 
 ###  PFCDisconnectedSwitch
 Questo processo è un osservatore di quello che viene notificato dal WES reagendo ai messaggi che vengono inviati:
@@ -73,4 +73,4 @@ In caso di EMERGENZA ermina l'applicazione e dopo qualche secondo Riavviare l'ap
 
 ##  ESECUZIONE 
 
-Consultare la relazione prensete nel progetto, contiene dettagliatamente come avviare l'applicazione e illustrazione completa.
+Consultare la relazione presente nel progetto, contiene dettagliatamente come avviare l'applicazione con illustrazioni.
