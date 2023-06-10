@@ -73,8 +73,6 @@ In caso ci fosse bisogno di tare uno di queste operazioni su un processo, esso r
 In caso di EMERGENZA termina l'applicazione e dopo qualche secondo riavvia l'applicazione ripartendo a leggere dal punto in cui si è fermato(tramito nextLine).
 										 
 
-##  ESECUZIONE 
+##  ESECUZIONE
 
-Consultare la relazione presente nel progetto, contiene dettagliatamente come avviare l'applicazione con illustrazioni.
-
-[Some title here](RelazioneProgetto.pdf)
+[Consultare la relazione presente nel progetto, contiene dettagliatamente come avviare l'applicazione con illustrazioni.](RelazioneProgetto.pdf)
