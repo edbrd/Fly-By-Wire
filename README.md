@@ -77,4 +77,4 @@ In caso di EMERGENZA termina l'applicazione e dopo qualche secondo riavvia l'app
 
 Consultare la relazione presente nel progetto, contiene dettagliatamente come avviare l'applicazione con illustrazioni.
 
-[Some title here](Relazione Progetto Sistemi Operativi Edmond Bardeli [Completo pdf].pdf)
+[Some title here](RelazioneProgetto.pdf)
