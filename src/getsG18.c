@@ -1,7 +1,7 @@
 /*
  * distanceAndSpeed.c
  *
- *  Created on: 30 nov 2020
+ *  Created on: 30 nov 2022
  *      Author: edbrd
  */
 #include <stdio.h>

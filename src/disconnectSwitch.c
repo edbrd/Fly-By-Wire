@@ -1,7 +1,7 @@
 /*
  * disconnectSwitch.c
  *
- *  Created on: 5 gen 2021
+ *  Created on: 5 gen 2022
  *      Author: edbrd
  */
 #include <sys/prctl.h> /* prctl(), PR_SET_NAME */
