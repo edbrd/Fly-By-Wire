@@ -1,10 +1,10 @@
 # Fly-By-Wire
 
-Progetto sistemi operativi 2019/2020 del corso di laurea in informatica Università degli studi di Firenze
-
 L'obiettivo del progetto è quello di costruire una simulazione della comunicazione (in parte) di un sistema Fly-By-Wire.
 
 Il fly by wire è un sistema che sostituisce i tradizionali comandi di volo diretti con un sistema di comando elettronico digitale.
+
+![alt text](imgs/schema747.png)
 
 Per poter acquisire dati verrà usato il sistema di comunicazione dati nmea utilizzato soprattutto in nautica e nella comunicazione di dati gps. Il progetto si basa su dati raccolti da un GARMIN G18 in ambiente aperto.
 Nel nostro caso analizzeremo solamente la riga che inizia con il target $GPGLL.
